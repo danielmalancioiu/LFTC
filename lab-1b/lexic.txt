@@ -1,0 +1,22 @@
+Alphabet:
+	- Upper (A-Z) and lower case letters (a-z) of the English alphabet
+	- Decimal digits
+
+Lexic:
+    - special symbols:
+                - operators: + - * / < <= = >= == <>
+		        - separators: [ ] { } , ; : space newline " ' |
+		        - reserved words: program var if else print for while arr input 
+
+    - identifiers: a sequence of letters and digits, such that the first character is 
+	a letter with the rule being: 
+		        identifier ::= ("" | letter) { letter | digit | "" }
+		        letter := "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+		        digit := "0" | "1" | "2" | ... | "9"
+
+    - constants:
+                intconst ::= "0" | ["+" | "-"] nz_digit { digit }
+                nz_digit ::= "1" | "2" | ... | "9"
+                strconst ::= '|' { letter | digit | "_" | " " } '|'
+                charconst ::= "'" (letter | digit | special_char) "'"
+                special_char ::= "+" | "-" | "*" | "<" | ">" | ...

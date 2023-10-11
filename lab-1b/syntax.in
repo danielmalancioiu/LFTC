@@ -1,0 +1,20 @@
+program ::= "program" IDENTIFIER "[" stmtlist "]"
+
+stmtlist ::= stmt | stmt stmtlist | stmt ";" stmt ";"...
+
+stmt ::= declaration | assignment | inputstmt | forstmt | ifstmt | printstmt
+
+declaration ::= "var" IDENTIFIER "=" NUM_CONSTANT
+
+assignment ::= "var" IDENTIFIER "=" expression
+
+expression ::= IDENTIFIER | NUM_CONST | "(" expression ")" | expression "+" expression
+
+inputstmt ::= "var" IDENTIFIER "=" "input" "{" IDENTIFIER "}"
+
+forstmt ::= "for" "{" stmtlist "}"
+
+ifstmt ::= "if" "{" stmtlist "}" ["else" "{" stmtlist "}"]
+
+printstmt ::= "print" "{" STR_CONSTANT "}"
+

@@ -5,7 +5,7 @@ Alphabet:
 Lexic:
     - special symbols:
                 - operators: + - * / < <= = >= == <>
-		        - separators: [ ] { } , ; : space newline " ' |
+		        - separators: [ ] { } , ; : space newline " ' |  // maybe include the separators: ()
 		        - reserved words: program var if else print for while arr input 
 
     - identifiers: a sequence of letters and digits, such that the first character is 

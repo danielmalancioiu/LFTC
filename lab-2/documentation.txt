@@ -1,0 +1,31 @@
+https://github.com/danielmalancioiu/LFTC
+
+Documentation
+The Symbol Table comprises three distinct hash tables: one for identifiers, one for integer constants, and one for string constants.
+Each hash table is represented as a list where each position is another list, allowing the storage of values that hash to the same position.
+Additionally, the hash tables have defined sizes.
+An element in the symbol table is identified by a pair of indices: the first index denotes the list in which the element is stored, and the second index indicates the element's position within that list.
+The hash function used for integer values is the value modulo the size of the list, while for string constants and identifiers, it's the sum of the ASCII codes of the characters modulo the size of the list.
+The implementation of the hash table is designed to be generic.
+
+
+Operations:
+Hash Table
+
+hash(key: int): int – calculates the position in the Symbol Table (ST) for storing the integer constant.
+hash(key: string): int – calculates the position in the ST for storing the string constant/identifier, based on the sum of the ASCII codes of their characters.
+getSize(): int – returns the size of the hash table.
+getHashValue(key: T): int – retrieves the corresponding position in the ST based on the type of the parameter 'key'.
+add(key: T): (int, int) – adds the key to the hash table and returns its position if the operation succeeds; otherwise, raises an exception.
+contains(key: T): boolean – checks if the given key exists in the hash table.
+getPosition(key: T): (int, int) – retrieves the position in the ST of the given key, if it exists; otherwise, returns (-1, -1).
+
+Symbol Table
+
+Consists of three hash tables: one for identifiers, one for string constants, and one for integer constants.
+addIdentifier(name: string): (int, int) – adds an identifier and returns its position in the ST.
+addIntConstant(constant: int): (int, int) – adds an integer constant and returns its position in the ST.
+addStringConstant(constant: string): (int, int) – adds a string constant and returns its position in the ST.
+hasIdentifier(name: string): boolean – checks if the given identifier exists in the ST.
+hasIntConstant(constant: int): boolean – checks if the given integer constant exists in the ST.
+hasStringConstant(constant: string): boolean – checks if the given string constant exists in the ST.

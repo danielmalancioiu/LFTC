@@ -15,6 +15,21 @@ Finite Automaton:
  If no such transition is found as required, or if the final state is not an output state, the word is deemed not accepted; otherwise, it is accepted.
 
 
+EBNF for fa.in file:
+non_zero_digit = 1|2| .. |9
+digit = 0|1|..|9
+number = non_zero_digit{digit}
+letter = a|b|..|z|A|B..|Z
+character = letter | digit
+firstLine = "states" "=" "{" {character} {"," character} "}"
+secondLine = {character}
+thirdLine = "out_states" "=" "{" {character} {"," character} "}"
+fourthLine = "alphabet" "=" "{" {character} {"," character} "}"
+triple = "(" {character} "," {character} "," {character} ")"
+fifthLine = "transitions" "=" "{" triple {";" triple} "}"
+inputFile = firstLine "\n" secondLine "\n" thirdLine "\n" fourthLine "\n" fifthLine
+
+
 The Symbol Table comprises three distinct hash tables: one for identifiers, one for integer constants, and one for string constants.
 Each hash table is represented as a list where each position is another list, allowing the storage of values that hash to the same position.
 Additionally, the hash tables have defined sizes.

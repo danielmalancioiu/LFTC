@@ -1,0 +1,5 @@
+states={A, B, C}
+initial_state=A
+out_states={B}
+alphabet={0, 1}
+transitions={(A, B, 0); (A, C, 1); (B, A, 0); (B, C, 1); (C, A, 0); (C, C, 1)}

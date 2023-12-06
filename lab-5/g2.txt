@@ -1,0 +1,21 @@
+nz_digit letter digit identifier intconst strconst charconst special_char program stmtlist stmt declaration assignment expression expressionlist inputstmt forstmt ifstmt printstmt
+0 1 2 3 4 5 6 7 8 9 print var input ; , ' " ( ) [ ] { } and or if else = for < <= > >= + - * / % == != >> << a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+program
+nz_digit -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+digit -> 0 | nz_digit
+letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+identifier -> letter | digit | letter digit
+intconst -> nz_digit digit
+strconst -> identifier | letter strconst
+special_char -> + | - | * | < | >
+program -> identifier stmtlist
+stmtlist -> stmt | stmt stmtlist | stmt ; stmt ;
+stmt -> declaration | assignment | inputstmt | forstmt | ifstmt | printstmt
+declaration -> var identifier = intconst
+assignment -> var identifier = expression
+expression -> strconst | intconst
+expressionlist -> expression special_char expression
+inputstmt -> var identifier = input { identifier }
+forstmt -> for { stmtlist }
+ifstmt -> if { stmtlist } [ else { stmtlist } ]
+printstmt -> print { strconst }

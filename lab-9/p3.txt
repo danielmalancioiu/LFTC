@@ -1,0 +1,15 @@
+program
+[
+    var n = 5
+    var max = 0
+
+    for {var i = 0 i < n i = i + 1}
+    [
+        if {i > max}
+        [
+            max = i
+        ]
+    ]
+
+    print{ |The maximum of the | + n + | numbers is: | + max}
+]

@@ -1,0 +1,9 @@
+program
+[
+        var a = 10
+        var b = 20
+        var c = 30
+        var sum = (a + b) + c
+        var average = sum / 3
+        print{| The average of the three numbers is: | + average}
+]

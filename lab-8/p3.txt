@@ -1,0 +1,19 @@
+program
+[
+    var n = 5
+    var max = 0
+
+    for {var i = 0; i < n; i++}
+    [
+        print{ |Enter number: |}
+        var num
+        input { num }
+
+        if {i == 0 || num > max}
+        [
+            max = num
+        ]
+    ]
+
+    print{ |The maximum of the | ++ n ++ | numbers is: | ++ max}
+]
